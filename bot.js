@@ -2,11 +2,10 @@ const Botmaster = require("botmaster");
 const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
 
 const twitter_bot_port = process.env.PORT | 3005;
-console.log(process.env.WEBHOOK_URL)
 const bot_config = { port: twitter_bot_port, useDefaultMountPathPrepend: false };
 const botmaster = new Botmaster(bot_config);
 console.log("Bot Config", bot_config);
-console.log(process.env.WEBHOOK_URL);
+console.log('WEBHOOK_URL', process.env.WEBHOOK_URL);
 
 const _ = require('lodash');
 
@@ -17,7 +16,7 @@ const twitterSettings = {
     accessToken: process.env.CHRP_TWITTER_ACCESS,
     accessTokenSecret: process.env.CHRP_TWITTER_SECRET
   },
-  webhookEndpoint: 'webhook/'
+  webhookEndpoint: '/'
 };
 
 const twitterBot = new TwitterAccountActivityBot(twitterSettings);
@@ -31,3 +30,4 @@ botmaster.use({
     console.log('Message Received ==>', update);
   }
 });
+console.log("Started up bot")
