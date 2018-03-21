@@ -2,8 +2,12 @@ const Botmaster = require("botmaster");
 const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
 
 const twitter_bot_port = process.env.PORT | 3005;
-const bot_config = { port: twitter_bot_port, useDefaultMountPathPrepend: false };
+
+const bot_config = { useDefaultMountPathPrepend: false };
+// const bot_config = { port: twitter_bot_port, useDefaultMountPathPrepend: false };
+
 const botmaster = new Botmaster(bot_config);
+
 console.log("Bot Config", bot_config);
 console.log('WEBHOOK_URL', process.env.WEBHOOK_URL);
 
@@ -19,7 +23,15 @@ const twitterSettings = {
   webhookEndpoint: '/'
 };
 
-const twitterBot = new TwitterAccountActivityBot(twitterSettings);
+const express = require("express");
+const app = express();
+
+// app.get("/", (req, res) => res.send("Hello World!"));
+
+app.listen(twitter_bot_port, () => console.log(`Express is listening on ${twitter_bot_port}`));
+
+
+const twitterBot = new TwitterAccountActivityBot(twitterSettings, app);
 
 botmaster.addBot(twitterBot);
 
