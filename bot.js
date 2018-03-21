@@ -17,7 +17,7 @@ const twitterSettings = {
     accessToken: process.env.CHRP_TWITTER_ACCESS,
     accessTokenSecret: process.env.CHRP_TWITTER_SECRET
   },
-  webhookEndpoint: '/'
+  webhookEndpoint: 'webhook/'
 };
 
 const twitterBot = new TwitterAccountActivityBot(twitterSettings);
@@ -29,14 +29,5 @@ botmaster.use({
   name: "my-middleware",
   controller: (bot, update) => {
     console.log('Message Received ==>', update);
-    // hash_key = `message-received-beta-${update.raw.direct_message.sender_screen_name}`;
-    // message = _.sample(messages);
-    // client.hincrby(redisConstants.REDIS_KEY_NAME, hash_key, 1);
-    // client.hget(redisConstants.REDIS_KEY_NAME, hash_key, function(err, obj) {
-    //   total_message_count = obj;
-    //   console.dir(obj);
-    //   message = `${message} ==> ${hash_key} ==> Messages Sent ${total_message_count}`;
-    //   return bot.reply(update, message);
-    // });
   }
 });
