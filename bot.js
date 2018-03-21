@@ -1,4 +1,4 @@
-// const Botmaster = require("botmaster");
+const Botmaster = require("botmaster");
 const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
 
 var twitter_bot_port = process.env.PORT | 3005;
@@ -6,7 +6,7 @@ var twitter_bot_port = process.env.PORT | 3005;
 const bot_config = { useDefaultMountPathPrepend: false };
 // const bot_config = { port: twitter_bot_port, useDefaultMountPathPrepend: false };
 
-// const botmaster = new Botmaster(bot_config);
+const botmaster = new Botmaster(bot_config);
 
 console.log("Bot Config", bot_config);
 console.log('WEBHOOK_URL', process.env.WEBHOOK_URL);
@@ -27,7 +27,7 @@ const express = require("express");
 const app = express();
 
 const startServer = async() => {
-  app.get("*", (req, res) => res.send("Hello World!"));
+  // app.get("*", (req, res) => res.send("Hello World!"));
   console.log("Listening on ",  process.env.PORT);
   app.listen(process.env.PORT, () =>
     console.log(`Express is listening on ${process.env.PORT}`)
@@ -37,14 +37,14 @@ const startServer = async() => {
 
 startServer();
 
-// const twitterBot = new TwitterAccountActivityBot(twitterSettings, app);
+const twitterBot = new TwitterAccountActivityBot(twitterSettings, app);
 
-// botmaster.addBot(twitterBot);
+botmaster.addBot(twitterBot);
 
-// botmaster.use({
-//   type: "incoming",
-//   name: "my-middleware",
-//   controller: (bot, update) => {
-//     console.log('Message Received ==>', update);
-//   }
-// });
+botmaster.use({
+  type: "incoming",
+  name: "my-middleware",
+  controller: (bot, update) => {
+    console.log('Message Received ==>', update);
+  }
+});
