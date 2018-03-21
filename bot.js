@@ -1,7 +1,7 @@
 const Botmaster = require("botmaster");
 const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
 
-var twitter_bot_port = process.env.PORT | 3005;
+var twitter_bot_port = process.env.PORT || 3005;
 
 const bot_config = { useDefaultMountPathPrepend: false };
 // const bot_config = { port: twitter_bot_port, useDefaultMountPathPrepend: false };
@@ -29,8 +29,9 @@ const app = express();
 const startServer = async() => {
   // app.get("*", (req, res) => res.send("Hello World!"));
   console.log("Listening on ",  process.env.PORT);
-  app.listen(process.env.PORT, () =>
-    console.log(`Express is listening on ${process.env.PORT}`)
+  var port = process.env.PORT || 3005;
+  app.listen( port, () =>
+    console.log(`Express is listening on ${port}`)
   );
   console.log("Started up bot");
 }
