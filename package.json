@@ -1,18 +1,8 @@
 {
-  "name": "botmaster-messenger",
+  "name": "botmaster-twitter-webhook",
   "version": "1.0.2",
-  "description": "The Facebook Messenger Botmaster integration",
-  "main": "lib/index.js",
-  "scripts": {
-    "s": "DEBUG=botmaster:* nodemon --legacy-watch ./example_jd.js",
-    "test": "export NODE_ENV=test; nyc --reporter=lcov --reporter=html ava; nyc report",
-    "test-debug": "export NODE_ENV=test DEBUG=botmaster:*; nyc --reporter=lcov --reporter=html ava",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "postversion": "git push && git push --tags && rm -rf build/temp",
-    "report": "nyc report",
-    "tunnel": "( while true; do lt -p 3000 -s watsonchatdemo; done; )",
-    "docs": "documentation readme lib/messenger_bot.js --section API"
-  },
+  "description": "The Twitter Webhook Botmaster integration",
+  "main": "bot.js",
   "ava": {
     "files": [
       "tests/**/*.js"
@@ -39,13 +29,11 @@
   "keywords": [
     "bot",
     "botmaster",
-    "facebook-messenger",
-    "facebook",
-    "messenger",
-    "bot-framework"
+    "bot-framework",
+    "twitter"
   ],
   "license": "MIT",
-  "author": "JD Wuarin <john.dwuarin@gmail.com>",
+  "author": "Alex Wait <bobber205@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/botmasterai/botmaster-messenger"
@@ -60,6 +48,7 @@
     "debug": "^2.6.3",
     "express": "^4.15.2",
     "lodash": "^4.17.4",
+    "request": "^2.85.0",
     "request-promise": "^4.2.0"
   },
   "engines": {
