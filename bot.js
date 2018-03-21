@@ -6,7 +6,7 @@ const twitter_bot_port = process.env.PORT | 3005;
 const bot_config = { useDefaultMountPathPrepend: false };
 // const bot_config = { port: twitter_bot_port, useDefaultMountPathPrepend: false };
 
-const botmaster = new Botmaster(bot_config);
+// const botmaster = new Botmaster(bot_config);
 
 console.log("Bot Config", bot_config);
 console.log('WEBHOOK_URL', process.env.WEBHOOK_URL);
