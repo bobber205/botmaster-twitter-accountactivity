@@ -28,9 +28,9 @@ const app = express();
 
 const startServer = async() => {
   app.get("*", (req, res) => res.send("Hello World!"));
-  console.log("Listening on ", twitter_bot_port, process.env.PORT);
-  app.listen(twitter_bot_port, () =>
-    console.log(`Express is listening on ${twitter_bot_port}`)
+  console.log("Listening on ",  process.env.PORT);
+  app.listen(process.env.PORT, () =>
+    console.log(`Express is listening on ${process.env.PORT}`)
   );
   console.log("Started up bot");
 }
