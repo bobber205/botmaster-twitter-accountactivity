@@ -58,3 +58,4 @@ typings/
 .env
 
 chirpify.sh
+chirpify_node.sh

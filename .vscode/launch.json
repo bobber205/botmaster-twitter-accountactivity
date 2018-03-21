@@ -6,6 +6,7 @@
     "configurations": [
         {
             "type": "node",
+            "envFile": "${workspaceFolder}/chirpify_node.sh",
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/bot.js"
