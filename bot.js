@@ -26,20 +26,20 @@ const twitterSettings = {
 const express = require("express");
 const app = express();
 
-// app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send("Hello World!"));
 
 app.listen(twitter_bot_port, () => console.log(`Express is listening on ${twitter_bot_port}`));
 
 
-const twitterBot = new TwitterAccountActivityBot(twitterSettings, app);
+// const twitterBot = new TwitterAccountActivityBot(twitterSettings, app);
 
-botmaster.addBot(twitterBot);
+// botmaster.addBot(twitterBot);
 
-botmaster.use({
-  type: "incoming",
-  name: "my-middleware",
-  controller: (bot, update) => {
-    console.log('Message Received ==>', update);
-  }
-});
+// botmaster.use({
+//   type: "incoming",
+//   name: "my-middleware",
+//   controller: (bot, update) => {
+//     console.log('Message Received ==>', update);
+//   }
+// });
 console.log("Started up bot")
