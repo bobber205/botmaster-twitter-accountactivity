@@ -47,7 +47,7 @@
     "crypto": "^0.0.3",
     "debug": "^2.6.3",
     "express": "^4.15.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.5",
     "redis": "^2.8.0",
     "request": "^2.85.0",
     "request-promise": "^4.2.0",
