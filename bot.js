@@ -47,5 +47,7 @@ botmaster.use({
   name: "my-middleware",
   controller: (bot, update) => {
     console.log('Message Received ==>', update);
+    message = 'hi there!';
+    return bot.reply(update, message);
   }
 });
