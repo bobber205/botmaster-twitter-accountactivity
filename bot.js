@@ -1,3 +1,5 @@
+if (process.env.NODE_ENV != 'production')
+  require("util").inspect.defaultOptions.depth = null;
 const Botmaster = require("botmaster");
 const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
 
