@@ -1,7 +1,7 @@
 const Botmaster = require("botmaster");
 const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
 
-var twitter_bot_port = process.env.PORT || 3005;
+var twitter_bot_port = process.env.PORT || 5005;
 
 const bot_config = { useDefaultMountPathPrepend: false };
 // const bot_config = { port: twitter_bot_port, useDefaultMountPathPrepend: false };
