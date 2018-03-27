@@ -11,7 +11,6 @@ const bot_config = { useDefaultMountPathPrepend: false };
 const botmaster = new Botmaster(bot_config);
 
 console.log("Bot Config", bot_config);
-console.log('WEBHOOK_URL', process.env.WEBHOOK_URL);
 
 const _ = require('lodash');
 
