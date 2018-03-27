@@ -29,7 +29,7 @@ const app = express();
 
 const startServer = async() => {
   // app.get("*", (req, res) => res.send("Hello World!"));
-  console.log("Listening on ",  process.env.PORT);
+  console.log("Listening on ",  process.env.PORT || 3005);
   var port = process.env.PORT || 3005;
   app.listen( port, () =>
     console.log(`Express is listening on ${port}`)
