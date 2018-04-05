@@ -1,5 +1,6 @@
 if (process.env.NODE_ENV != 'production' || true)
   require("util").inspect.defaultOptions.depth = null;
+
 const Botmaster = require("botmaster");
 const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
 
@@ -28,13 +29,13 @@ const express = require("express");
 const app = express();
 
 const startServer = async() => {
+  let port = process.env.PORT || 3005;
   // app.get("*", (req, res) => res.send("Hello World!"));
-  console.log("Listening on ",  process.env.PORT || 3005);
-  var port = process.env.PORT || 3005;
+  console.log("Listening on ",  port);
+  var port = port;
   app.listen( port, () =>
     console.log(`Express is listening on ${port}`)
   );
-  console.log("Started up bot");
 }
 
 startServer();
@@ -47,8 +48,8 @@ botmaster.use({
   type: "incoming",
   name: "my-middleware",
   controller: (bot, update) => {
-    console.log('Message Received ==>', update);
-    message = 'hi there!';
-    return bot.reply(update, message);
+    // console.log('Message Received ==>');
+    // message = 'hi there!';
+    // return bot.sendDM(update, message);
   }
 });
