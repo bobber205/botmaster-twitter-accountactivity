@@ -1,0 +1,2 @@
+curl -i -X POST  https://1ea27708.ngrok.io -H "Content-Type: application/json" --data "@./scripts/data.json"
+curl -i -X POST  https://1ea27708.ngrok.io -H "Content-Type: application/text" --data "@./scripts/data.json"

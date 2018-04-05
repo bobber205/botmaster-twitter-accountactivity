@@ -22,3 +22,4 @@ var final_result = _.map(uniques, (current) => {
 final_result = _.chain(final_result).sortBy('count').reverse().value();
 
 console.log(final_result)
+
