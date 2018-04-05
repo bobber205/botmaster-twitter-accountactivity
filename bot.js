@@ -32,7 +32,6 @@ const startServer = async() => {
   let port = process.env.PORT || 3005;
   // app.get("*", (req, res) => res.send("Hello World!"));
   console.log("Listening on ",  port);
-  var port = port;
   app.listen( port, () =>
     console.log(`Express is listening on ${port}`)
   );
