@@ -15,7 +15,7 @@ console.log("Bot Config", bot_config);
 
 const _ = require('lodash');
 
-const twitterSettings = {
+const twitterSettings = settings = {
   credentials: {
     consumerKey: process.env.CHRP_TWITTER_CONSUMER_KEY,
     consumerSecret: process.env.CHRP_TWITTER_CONSUMER_SECRET,
