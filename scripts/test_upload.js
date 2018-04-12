@@ -23,15 +23,21 @@
 
 // require('./scripts/test_upload.js');
 
-const Twitter = require("twitter");
-var client = new Twitter({
-  consumerKey: process.env.CHRP_TWITTER_CONSUMER_KEY,
-  consumerSecret: process.env.CHRP_TWITTER_CONSUMER_SECRET,
-  accessToken: process.env.CHRP_TWITTER_ACCESS,
-  accessTokenSecret: process.env.CHRP_TWITTER_SECRET
-});
+var Twitter = require("twitter");
 
-console.log(client);
+var config = {
+  consumer_key: process.env.CHRP_TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.CHRP_TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.CHRP_TWITTER_ACCESS,
+  access_token_secret: process.env.CHRP_TWITTER_SECRET
+  // bearer_token: process.env.BEARER_TOKEN
+};
+
+console.log("Config ==>", config);
+
+var client = new Twitter(config);
+
+console.log('twitter client', client);
 
 
 var pathToMovie = "./correct.gif"
@@ -44,7 +50,7 @@ console.log(pathToMovie, mediaType, mediaSize);
 
   function initUpload() {
     console.log("IN INIT");
-    return makePost("https://upload.twitter.com/1.1/media/upload.json", {
+    return makePost("media/upload", {
       command: "INIT",
       total_bytes: mediaSize,
       media_type: mediaType
@@ -95,8 +101,19 @@ console.log(pathToMovie, mediaType, mediaSize);
   }
 
 
+  // client.post("statuses/update", { status: "I Love Twitter" }, function(
+  //   error,
+  //   tweet,
+  //   response
+  // ) {
+  //   // if (error) throw error;
+  //   console.log(tweet); // Tweet body.
+  //   // console.log(response); // Raw response object.
+  // });
+
+
   initUpload() 
-    // .then(appendUpload) 
-    // .then(finalizeUpload) 
-    // .then(mediaId => {
-    // });
+    .then(appendUpload) 
+    .then(finalizeUpload) 
+    .then(mediaId => {
+    });
