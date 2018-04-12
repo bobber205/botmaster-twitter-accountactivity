@@ -58,7 +58,8 @@
     "twitter": "^1.7.1"
   },
   "engines": {
-    "node": ">=4.x.x"
+    "node": ">=4.x.x",
+    "yarn": "1.5.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
@@ -68,7 +69,6 @@
     "eslint": "^3.17.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-ava": "^4.2.0",
-    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "nodemon": "^1.11.0",
