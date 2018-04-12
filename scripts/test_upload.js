@@ -43,7 +43,8 @@ console.log(pathToMovie, mediaType, mediaSize);
 
 
   function initUpload() {
-    return makePost("media/upload", {
+    console.log("IN INIT");
+    return makePost("https://upload.twitter.com/1.1/media/upload.json", {
       command: "INIT",
       total_bytes: mediaSize,
       media_type: mediaType
