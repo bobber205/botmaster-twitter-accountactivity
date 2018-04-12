@@ -95,7 +95,7 @@ console.log(pathToMovie, mediaType, mediaSize);
 
 
   initUpload() 
-    .then(appendUpload) 
-    .then(finalizeUpload) 
-    .then(mediaId => {
-    });
+    // .then(appendUpload) 
+    // .then(finalizeUpload) 
+    // .then(mediaId => {
+    // });
