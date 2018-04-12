@@ -31,6 +31,8 @@ var client = new Twitter({
   accessTokenSecret: process.env.CHRP_TWITTER_SECRET
 });
 
+console.log(client);
+
 
 var pathToMovie = "./correct.gif"
 var mediaType = "image/gif";
