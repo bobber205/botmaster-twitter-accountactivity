@@ -20,6 +20,9 @@
 // };
 
 
+
+// require('./scripts/test_upload.js');
+
 const Twitter = require("twitter");
 var client = new Twitter({
   consumerKey: process.env.CHRP_TWITTER_CONSUMER_KEY,
@@ -42,7 +45,8 @@ console.log(pathToMovie, mediaType, mediaSize);
       command: "INIT",
       total_bytes: mediaSize,
       media_type: mediaType
-    }).then(data => data.media_id_string);
+    }).then(data => data.media_id_string)
+    .catch(() => {console.log(arguments)});
   }
 
 
@@ -53,7 +57,11 @@ console.log(pathToMovie, mediaType, mediaSize);
         media_id: mediaId,
         media: mediaData,
         segment_index: 0
-      }).then(data => mediaId);
+      })
+        .then(data => mediaId)
+        .catch(() => {
+          console.log(arguments);
+        });
     }
 
 
@@ -62,7 +70,11 @@ console.log(pathToMovie, mediaType, mediaSize);
         return makePost("media/upload", {
           command: "FINALIZE",
           media_id: mediaId
-        }).then(data => mediaId);
+        })
+          .then(data => mediaId)
+          .catch(() => {
+            console.log(arguments);
+          });
       }
 
 
@@ -70,6 +82,7 @@ console.log(pathToMovie, mediaType, mediaSize);
     return new Promise((resolve, reject) => {
       client.post(endpoint, params, (error, data, response) => {
         if (error) {
+          console.log("ERROR ON POST", error);
           reject(error);
         } else {
           resolve(data);
