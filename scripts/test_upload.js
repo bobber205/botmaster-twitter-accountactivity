@@ -40,12 +40,12 @@ var client = new Twitter(config);
 console.log('twitter client', client);
 
 
-var pathToMovie = "./correct.gif"
+var pathToMovie = "./wrong.gif"
 var mediaType = "image/gif";
 var mediaData = require("fs").readFileSync(pathToMovie);
 var mediaSize = require("fs").statSync(pathToMovie).size;
 
-console.log(pathToMovie, mediaType, mediaSize);
+console.log('File Parameters', pathToMovie, mediaType, mediaSize);
 
 
   function initUpload() {
@@ -53,34 +53,49 @@ console.log(pathToMovie, mediaType, mediaSize);
     return makePost("media/upload", {
       command: "INIT",
       total_bytes: mediaSize,
-      media_type: mediaType
-    }).then(data => data.media_id_string)
-    .catch(() => {console.log(arguments)});
+      media_type: mediaType,
+      media_category: "dm_gif"
+      // shared: true,
+    })
+      .then(data => {
+        console.log("data is!!!", data);
+        global.media_id = data.media_id_string;
+        return data.media_id_string;
+      })
+      .catch(() => {
+        console.log(arguments);
+      });
   }
 
 
 
     function appendUpload(mediaId) {
+      console.log("append mediaID is", mediaId)
       return makePost("media/upload", {
         command: "APPEND",
         media_id: mediaId,
         media: mediaData,
         segment_index: 0
       })
-        .then(data => mediaId)
+        .then(data => {
+          console.log("append data", data);
+          return mediaId;
+        })
         .catch(() => {
           console.log(arguments);
         });
     }
 
 
-
       function finalizeUpload(mediaId) {
+        console.log(`in finalizeUploader ${mediaId}`);
         return makePost("media/upload", {
           command: "FINALIZE",
           media_id: mediaId
         })
-          .then(data => mediaId)
+          .then(data => {
+            console.log('data in finalize is', data);
+          })
           .catch(() => {
             console.log(arguments);
           });
@@ -117,3 +132,8 @@ console.log(pathToMovie, mediaType, mediaSize);
     .then(finalizeUpload) 
     .then(mediaId => {
     });
+
+setTimeout(function() {
+  console.log(`checking status of ${global.media_id}`);
+  checkStatus(global.media_id)
+},3000);
