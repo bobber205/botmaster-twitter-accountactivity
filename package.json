@@ -42,6 +42,7 @@
     "url": "https://github.com/botmasterai/botmaster-messenger/issues"
   },
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.17.1",
     "botmaster": "^3.0.7",
     "debug": "^2.6.3",
