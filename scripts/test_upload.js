@@ -15,7 +15,7 @@ var client = new Twitter(config);
 console.log('twitter client', client);
 
 
-var pathToMovie = "./wrong2.gif"
+var pathToMovie = "./correct.gif"
 var mediaType = "image/gif";
 var mediaData = require("fs").readFileSync(pathToMovie);
 var mediaSize = require("fs").statSync(pathToMovie).size;
