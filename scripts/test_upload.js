@@ -1,28 +1,3 @@
-// var Twit = require("twit");
-// const Twitter = require("twitter");
-
-// var twitterSettings = settings = {
-//     credentials: {
-//     consumerKey: process.env.CHRP_TWITTER_CONSUMER_KEY,
-//     consumerSecret: process.env.CHRP_TWITTER_CONSUMER_SECRET,
-//     accessToken: process.env.CHRP_TWITTER_ACCESS,
-//     accessTokenSecret: process.env.CHRP_TWITTER_SECRET
-// },
-// webhookEndpoint: '/'
-// };
-
-
-// var twitCredentials = {
-//     consumer_key: settings.credentials.consumerKey,
-//     consumer_secret: settings.credentials.consumerSecret,
-//     access_token: settings.credentials.accessToken,
-//     access_token_secret: settings.credentials.accessTokenSecret,
-// };
-
-
-
-// require('./scripts/test_upload.js');
-
 var Twitter = require("twitter");
 
 var config = {
@@ -40,7 +15,7 @@ var client = new Twitter(config);
 console.log('twitter client', client);
 
 
-var pathToMovie = "./wrong.gif"
+var pathToMovie = "./wrong2.gif"
 var mediaType = "image/gif";
 var mediaData = require("fs").readFileSync(pathToMovie);
 var mediaSize = require("fs").statSync(pathToMovie).size;
@@ -54,8 +29,8 @@ console.log('File Parameters', pathToMovie, mediaType, mediaSize);
       command: "INIT",
       total_bytes: mediaSize,
       media_type: mediaType,
-      media_category: "dm_gif"
-      // shared: true,
+      media_category: "dm_gif",
+      shared: true,
     })
       .then(data => {
         console.log("data is!!!", data);
