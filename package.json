@@ -59,8 +59,8 @@
     "twitter": "^1.7.1"
   },
   "engines": {
-    "node": ">=4.x.x",
-    "yarn": "1.5.1"
+    "node": ">=8.x.x",
+    "yarn": "1.6.0"
   },
   "devDependencies": {
     "ava": "^0.18.2",
