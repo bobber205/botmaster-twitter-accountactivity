@@ -4,8 +4,8 @@ const redis = require("redis");
 const redisClient = redis.createClient(process.env.REDIS_URL);
 
 var config_object = {
-  wrong_media_assets: ["985993017864601600"],
-  right_media_assets: ["985992963271479296"]
+  wrong_media_assets: ["985992963271479296"],
+  right_media_assets: ["985993017864601600"]
 };
 
 redisClient.on("connect", function(err) {
