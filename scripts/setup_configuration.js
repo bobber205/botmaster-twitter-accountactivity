@@ -17,6 +17,7 @@ redisClient.on("connect", function(err) {
   redisClient.set(redisHelpers.getConfigurationKey(), JSON.stringify(config_object), (result) => {
       console.log("Configuration Set", config_object, result);
   });
+  console.log(`Handles with Extra Lives Are!! ${handles_with_extra_lives}`)
   _.each(handles_with_extra_lives, (handle) => {
     console.log(`Setting ${handle} to 1`);
     redisClient.hmset(redisHelpers.getExtraLifeHashKey(quiz_handle), handle, "1", redis.print);
