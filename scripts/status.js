@@ -41,7 +41,7 @@ var client = new Twitter(config);
     });
   }
 
-  global.media_id = "985993017864601600";
+  global.media_id = "986343146249310213";
 
   console.log(`checking status of ${global.media_id}`);
   checkStatus(global.media_id);

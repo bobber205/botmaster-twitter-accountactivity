@@ -5,7 +5,7 @@ const _ = require('lodash');
 const redisClient = redis.createClient(process.env.REDIS_URL);
 
 var config_object = {
-  wrong_media_assets: ["985992963271479296"],
+  wrong_media_assets: ["985992963271479296", "986343146249310213"],
   right_media_assets: ["985993017864601600"]
 };
 
