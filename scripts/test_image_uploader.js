@@ -22,7 +22,7 @@ join(imageUploader.uploadImages('wrong'), imageUploader.uploadImages('right')).t
         config = JSON.parse(config);
         config.right_media_assets = right_ids;
         config.wrong_media_assets = wrong_ids;
-        redisClient.set(redisHelpers.getConfigurationKey(), JSON.stringify(config));
+        redisClient.set(redisHelpers.getConfigurationKey(), JSON.stringify(config), redis.print);
     });
 
 });
