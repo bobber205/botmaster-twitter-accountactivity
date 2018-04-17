@@ -5,7 +5,6 @@ var config = {
   consumer_secret: process.env.CHRP_TWITTER_CONSUMER_SECRET,
   access_token_key: process.env.CHRP_TWITTER_ACCESS,
   access_token_secret: process.env.CHRP_TWITTER_SECRET
-  // bearer_token: process.env.BEARER_TOKEN
 };
 
 console.log("Config ==>", config);
