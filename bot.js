@@ -2,7 +2,7 @@ if (process.env.NODE_ENV != 'production' || true)
   require("util").inspect.defaultOptions.depth = null;
 
 const Botmaster = require("botmaster");
-const TwitterAccountActivityBot = require("./lib/twitter_account_activity_bot");
+const TwitterAccountActivityBot = require("./lib/twitterAccountActivityBot");
 
 var twitter_bot_port = process.env.PORT || 3005;
 
