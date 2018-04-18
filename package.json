@@ -34,6 +34,7 @@
   ],
   "license": "MIT",
   "author": "Alex Wait <bobber205@gmail.com>",
+  "cacheDirectories": ["node_modules"],
   "repository": {
     "type": "git",
     "url": "https://github.com/botmasterai/botmaster-messenger"
