@@ -6044,9 +6044,9 @@ twit@^2.2.9:
     mime "^1.3.4"
     request "^2.68.0"
 
-twitter@^1.7.1:
+"twitter@https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca":
   version "1.7.1"
-  resolved "https://registry.yarnpkg.com/twitter/-/twitter-1.7.1.tgz#0762378f1dc1c050e48f666aca904e24b1a962f4"
+  resolved "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca"
   dependencies:
     deep-extend "^0.5.0"
     request "^2.72.0"
