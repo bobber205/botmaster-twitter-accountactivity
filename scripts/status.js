@@ -5,7 +5,6 @@ var config = {
   consumer_secret: process.env.CHRP_TWITTER_CONSUMER_SECRET,
   access_token_key: process.env.CHRP_TWITTER_ACCESS,
   access_token_secret: process.env.CHRP_TWITTER_SECRET
-  // bearer_token: process.env.BEARER_TOKEN
 };
 
 var client = new Twitter(config);
@@ -40,8 +39,8 @@ var client = new Twitter(config);
       });
     });
   }
-
-  global.media_id = "986363278480760834";
+  console.log(process.argv[2])
+  global.media_id = process.argv[2];
 
   console.log(`checking status of ${global.media_id}`);
   checkStatus(global.media_id);
