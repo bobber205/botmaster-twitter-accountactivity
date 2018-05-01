@@ -19,9 +19,12 @@ const _ = require("lodash");
 
 var args = _.drop(process.argv, 2);
 
-var defs = _.each(args, (dir_name) => {imageUploader.uploadImages(dir_name)});
+var defs = _.map(args, (dir_name) => {return imageUploader.uploadImages(dir_name)});
+
+console.log("DEFS", defs);
 
 join(...defs).then((all_ids) => {
+    console.log("all ids", all_ids)
     var wrong_ids = all_ids[0];
     var right_ids = all_ids[1];
     var wait_ids = all_ids[2];
