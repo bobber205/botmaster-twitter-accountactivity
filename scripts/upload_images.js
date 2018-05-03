@@ -19,6 +19,9 @@ const _ = require("lodash");
 
 var args = _.drop(process.argv, 2);
 
+
+if (args.length == 0) args = ['wrong','right','wait','late', 'iq_score'];
+
 var defs = _.map(args, (dir_name) => {return imageUploader.uploadImages(dir_name)});
 
 console.log("DEFS", defs);
