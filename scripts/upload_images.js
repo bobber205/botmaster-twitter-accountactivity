@@ -40,15 +40,15 @@ join(...defs).then((all_ids) => {
     redisClient.getAsync(redisHelpers.getConfigurationKey()).then((config) => {
         if (!config) config = "{}";
         config = JSON.parse(config);
-        if (right_ids.length)
+        if (right_ids && right_ids.length)
             config.right_media_assets = right_ids;
-        if (wrong_ids.length)
+        if (wrong_ids && wrong_ids.length)
             config.wrong_media_assets = wrong_ids;
-        if (wait_ids.length)
+        if (wait_ids && wait_ids.length)
             config.wait_media_assets = wait_ids;
-        if (late_ids.length)
+        if (late_ids && late_ids.length)
             config.late_media_assets = late_ids;
-        if (iq_media_assets.length)
+        if (iq_media_assets && iq_media_assets.length)
             config.iq_media_assets = iq_media_assets;
         redisClient.set(redisHelpers.getConfigurationKey(), JSON.stringify(config), redis.print);
     });
