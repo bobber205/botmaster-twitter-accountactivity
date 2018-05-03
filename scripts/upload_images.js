@@ -40,11 +40,16 @@ join(...defs).then((all_ids) => {
     redisClient.getAsync(redisHelpers.getConfigurationKey()).then((config) => {
         if (!config) config = "{}";
         config = JSON.parse(config);
-        config.right_media_assets = right_ids;
-        config.wrong_media_assets = wrong_ids;
-        config.wait_media_assets = wait_ids;
-        config.late_media_assets = late_ids;
-        // config.iq_media_assets = iq_media_assets;
+        if (right_ids.length)
+            config.right_media_assets = right_ids;
+        if (wrong_ids.length)
+            config.wrong_media_assets = wrong_ids;
+        if (wait_ids.length)
+            config.wait_media_assets = wait_ids;
+        if (late_ids.length)
+            config.late_media_assets = late_ids;
+        if (iq_media_assets.length)
+            config.iq_media_assets = iq_media_assets;
         redisClient.set(redisHelpers.getConfigurationKey(), JSON.stringify(config), redis.print);
     });
 });
