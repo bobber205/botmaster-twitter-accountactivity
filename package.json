@@ -56,6 +56,7 @@
     "redis": "^2.8.0",
     "request": "^2.85.0",
     "request-promise": "^4.2.0",
+    "s3": "^4.4.0",
     "sidekiq": "^1.1.1",
     "twit": "^2.2.9",
     "twitter": "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca"
