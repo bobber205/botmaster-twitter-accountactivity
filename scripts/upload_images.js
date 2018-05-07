@@ -15,7 +15,7 @@ const _ = require("lodash");
 var args = _.drop(process.argv, 2);
 
 
-if (args.length == 0) args = ['wrong','right','wait','late', 'iq_score'];
+if (args.length == 0) args = ['wrong','right','wait','late'];
 
 var defs = _.map(args, (dir_name) => {return imageUploader.uploadImages(dir_name)});
 
@@ -24,18 +24,18 @@ console.log("DEFS", defs);
 join(...defs).then((all_ids) => {
     all_ids = Object.assign.apply(Object, _.flatten(all_ids));
     console.log("all ids", all_ids)
-    var wrong_ids = all_ids.wrong;
-    var right_ids = all_ids.right;
-    var wait_ids = all_ids.wait;
-    var late_ids = all_ids.late;
-    var iq_media_assets = all_ids.iq_score;
+    var wrong_ids = _.compact(all_ids.wrong);
+    var right_ids = _.compact(all_ids.right);
+    var wait_ids = _.compact(all_ids.wait);
+    var late_ids = _.compact(all_ids.late);
+    // var iq_media_assets = all_ids.iq_score;
     console.log("Wrong ids", wrong_ids);
     console.log("Right Ids", right_ids);
     console.log("Wait Ids", wait_ids);
     console.log("Late Ids", late_ids);
-    console.log("IQ Ids", iq_media_assets);
-    if (iq_media_assets)
-        console.log("IQ Media Asset Length", iq_media_assets.length)
+    // console.log("IQ Ids", iq_media_assets);
+    // if (iq_media_assets)
+    //     console.log("IQ Media Asset Length", iq_media_assets.length)
     redisClient.getAsync(redisHelpers.getConfigurationKey()).then((config) => {
         if (!config) config = "{}";
         config = JSON.parse(config);
@@ -47,8 +47,8 @@ join(...defs).then((all_ids) => {
             config.wait_media_assets = wait_ids;
         if (late_ids && late_ids.length)
             config.late_media_assets = late_ids;
-        if (iq_media_assets && iq_media_assets.length)
-            config.iq_media_assets = iq_media_assets;
+        // if (iq_media_assets && iq_media_assets.length)
+        //     config.iq_media_assets = iq_media_assets;
         redisClient.set(redisHelpers.getConfigurationKey(), JSON.stringify(config), redis.print);
     });
 });
