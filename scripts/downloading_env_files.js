@@ -42,9 +42,9 @@ var my_promise = new Promise((resolve, reject) => {
     });
 
 async function uploadFile() {
-    console.log("Waiting...");
+    console.log("Downloading Environment File...");
     await my_promise;
-    console.log("Done Uploading!")
+    console.log("Done!")
 }
 
 uploadFile();
