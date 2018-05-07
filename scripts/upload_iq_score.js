@@ -22,7 +22,7 @@ join(...defs).then((all_ids) => {
 
     console.log("IQ Ids", iq_media_assets);
     if (iq_media_assets)
-        console.log("IQ Media Asset Length", iq_media_assets.length)
+        console.log("IQ Media Asset Length", iq_media_assets.length);
     redisClient.getAsync(redisHelpers.getConfigurationKey()).then((config) => {
         if (!config) config = "{}";
         config = JSON.parse(config);
