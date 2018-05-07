@@ -1,4 +1,5 @@
-var s3 = require('s3');
+const s3 = require('s3');
+const Promise = require("bluebird");
 
 var client = s3.createClient({
     maxAsyncS3: 20, // this is the default
@@ -17,30 +18,35 @@ var client = s3.createClient({
     },
 });
 
-console.log(process.env.AWS_S3_REGION)
-
 var params = {
     localFile: "config/accounts.json",
 
     s3Params: {
         Bucket: "iqtrivia",
         Key: "environment/accounts.json",
-        // other options supported by putObject, except Body and ContentLength.
-        // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property
     },
 }
 
-console.log(params);
-
-
 var uploader = client.uploadFile(params);
-uploader.on('error', function (err) {
-    console.error("unable to upload:", err.stack);
-});
-uploader.on('progress', function () {
-    console.log("progress", uploader.progressMd5Amount,
-        uploader.progressAmount, uploader.progressTotal);
-});
-uploader.on('end', function () {
-    console.log("done uploading");
-});
+
+var my_promise = new Promise((resolve, reject) => {
+        uploader.on('error', function (err) {
+            console.error("unable to upload:", err.stack);
+        });
+        uploader.on('progress', function () {
+            console.log("progress", uploader.progressMd5Amount,
+                uploader.progressAmount, uploader.progressTotal);
+        });
+        uploader.on('end', function () {
+            resolve();
+        });
+    });
+
+async function uploadFile() {
+    console.log("Waiting...");
+    await my_promise;
+    console.log("Done Uploading!")
+}
+
+uploadFile();
+
