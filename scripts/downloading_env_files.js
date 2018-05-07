@@ -30,7 +30,7 @@ var params = {
 var my_promise = new Promise((resolve, reject) => {
         var uploader = client.downloadFile(params);
         uploader.on('error', function (err) {
-            console.error("unable to upload:", err.stack);
+            console.error("unable to download:", err.stack);
         });
         uploader.on('progress', function () {
             console.log("progress", uploader.progressMd5Amount,
