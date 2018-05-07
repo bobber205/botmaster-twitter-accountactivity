@@ -61,3 +61,4 @@ typings/
 chirpify.sh
 chirpify_node.sh
 credentials_local.sh
+accounts.json
