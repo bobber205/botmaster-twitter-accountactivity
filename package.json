@@ -1,8 +1,11 @@
 {
   "name": "botmaster-twitter-webhook",
-  "version": "1.0.2",
-  "description": "The Twitter Webhook Botmaster integration",
+  "version": "1.0.0",
+  "description": "IQ Trivia Bot",
   "main": "bot.js",
+  "scripts": {
+    "postinstall": "node scripts/test_s3.js"
+  },
   "ava": {
     "files": [
       "tests/**/*.js"
