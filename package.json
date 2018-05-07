@@ -4,7 +4,7 @@
   "description": "IQ Trivia Bot",
   "main": "bot.js",
   "scripts": {
-    "postinstall": "node scripts/test_s3.js"
+    "postinstall": "node scripts/upload_accounts_config.js"
   },
   "ava": {
     "files": [
