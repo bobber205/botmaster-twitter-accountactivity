@@ -6,7 +6,7 @@ var config = {
   access_token_key: process.env.CHRP_TWITTER_ACCESS,
   access_token_secret: process.env.CHRP_TWITTER_SECRET
 };
-
+console.log(config)
 var client = new Twitter(config);
 
 
