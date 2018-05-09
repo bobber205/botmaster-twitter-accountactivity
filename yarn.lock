@@ -6074,6 +6074,10 @@ text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
+thize@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/thize/-/thize-0.2.2.tgz#8803ec2a039736ba3b15d717f6b4f1d62387e282"
+
 through2-filter@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/through2-filter/-/through2-filter-2.0.0.tgz#60bc55a0dacb76085db1f9dae99ab43f83d622ec"
