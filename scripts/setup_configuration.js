@@ -6,7 +6,7 @@ const redisClient = redis.createClient(process.env.REDIS_URL);
 
 var quiz_handle = process.env.BOT_HANDLE || "IQtrivia";
 
-var handles_with_extra_lives = ["bobber205", "ChrisTeso"];
+var handles_with_extra_lives = ["owlsfan954", "chrisbarnett01", "AkhilaMidde"];
   
 redisClient.on("connect", function(err) {
   console.log(`Handles with Extra Lives Are!! ${handles_with_extra_lives}`)
