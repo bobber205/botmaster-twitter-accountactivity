@@ -62,3 +62,8 @@ chirpify.sh
 chirpify_node.sh
 credentials_local.sh
 accounts.json
+images/iq_score
+images/late
+images/right
+images/wait
+images/wrong
