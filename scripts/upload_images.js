@@ -21,6 +21,8 @@ var defs = _.map(args, (dir_name) => {return imageUploader.uploadImages(dir_name
 
 console.log("DEFS", defs);
 
+var bot_handle = process.env.BOT_HANDLE;
+
 join(...defs).then((all_ids) => {
     all_ids = Object.assign.apply(Object, _.flatten(all_ids));
     console.log("all ids", all_ids)
@@ -36,7 +38,7 @@ join(...defs).then((all_ids) => {
     // console.log("IQ Ids", iq_media_assets);
     // if (iq_media_assets)
     //     console.log("IQ Media Asset Length", iq_media_assets.length)
-    redisClient.getAsync(redisHelpers.getConfigurationKey()).then((config) => {
+    redisClient.getAsync(redisHelpers.getConfigurationKeyForHandle(bot_handle)).then((config) => {
         if (!config) config = "{}";
         config = JSON.parse(config);
         if (right_ids && right_ids.length)
@@ -49,6 +51,6 @@ join(...defs).then((all_ids) => {
             config.late_media_assets = late_ids;
         // if (iq_media_assets && iq_media_assets.length)
         //     config.iq_media_assets = iq_media_assets;
-        redisClient.set(redisHelpers.getConfigurationKey(), JSON.stringify(config), redis.print);
+        redisClient.set(redisHelpers.getConfigurationKeyForHandle(bot_handle), JSON.stringify(config), redis.print);
     });
 });
