@@ -21,6 +21,8 @@ imageUploader.onEnvReady().then(() => {
         var iq_media_assets = all_ids.iq_score;
         console.log("IQ Ids", iq_media_assets);
         if (iq_media_assets) console.log("IQ Media Asset Length", iq_media_assets.length);
-        redisClient.set(redisHelpers.getConfigurationKeyForIQScores(bot_handle), JSON.stringify(iq_media_assets), 'EX', 86400);
+        redisClient.set(redisHelpers.getConfigurationKeyForIQScores(bot_handle), JSON.stringify(iq_media_assets), 'EX', 86400, () => {
+            console.log("Done with Uploading and setting IQ Images");
+        });
     });
 });

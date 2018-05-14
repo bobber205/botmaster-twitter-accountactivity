@@ -50,7 +50,9 @@ imageUploader.onEnvReady().then(() => {
                 config.late_media_assets = late_ids;
             // if (iq_media_assets && iq_media_assets.length)
             //     config.iq_media_assets = iq_media_assets;
-            redisClient.set(redisHelpers.getConfigurationKeyForHandle(bot_handle), JSON.stringify(config), 'EX', 86400);
+            redisClient.set(redisHelpers.getConfigurationKeyForHandle(bot_handle), JSON.stringify(config), 'EX', 86400, () => {
+                console.log("Done with Images!")
+            });
         });
     });
 });
