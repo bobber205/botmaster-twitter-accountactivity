@@ -19,16 +19,8 @@ imageUploader.onEnvReady().then(() => {
     join(...defs).then((all_ids) => {
         all_ids = Object.assign.apply(Object, _.flatten(all_ids));
         var iq_media_assets = all_ids.iq_score;
-
         console.log("IQ Ids", iq_media_assets);
-        if (iq_media_assets)
-            console.log("IQ Media Asset Length", iq_media_assets.length);
-        redisClient.getAsync(redisHelpers.getConfigurationKeyForHandle(bot_handle)).then((config) => {
-            if (!config) config = "{}";
-            config = JSON.parse(config);
-            if (iq_media_assets && iq_media_assets.length)
-                config.iq_media_assets = iq_media_assets;
-            redisClient.set(redisHelpers.getConfigurationKeyForHandle(bot_handle), JSON.stringify(config), redis.print);
-        });
+        if (iq_media_assets) console.log("IQ Media Asset Length", iq_media_assets.length);
+        redisClient.set(redisHelpers.getConfigurationKeyForIQScores(bot_handle), JSON.stringify(iq_media_assets), redis.print);
     });
 });
