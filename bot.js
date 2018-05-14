@@ -41,14 +41,14 @@ startServer();
 
 const twitterBot = new TwitterAccountActivityBot(twitterSettings, app);
 
-botmaster.addBot(twitterBot);
+// botmaster.addBot(twitterBot);
 
-botmaster.use({
-  type: "incoming",
-  name: "my-middleware",
-  controller: (bot, update) => {
-    // console.log('Message Received ==>');
-    // message = 'hi there!';
-    // return bot.sendDM(update, message);
-  }
-});
+// botmaster.use({
+//   type: "incoming",
+//   name: "my-middleware",
+//   controller: (bot, update) => {
+//     // console.log('Message Received ==>');
+//     // message = 'hi there!';
+//     // return bot.sendDM(update, message);
+//   }
+// });
