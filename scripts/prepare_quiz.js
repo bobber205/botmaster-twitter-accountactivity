@@ -5,9 +5,9 @@ prompt.start('Press Any Key To Continue');
 
 prompt.get(['username'], function (err, result) {
     console.log(result)
-    const iq_uploader = require("./upload_iq_score");
+    const image_uploader = require("./upload_images");
     prompt.start('Press Any Key To Continue');
     prompt.get(['username'], function (err, result) {
-        const image_uploader = require("./upload_images");
+        const iq_uploader = require("./upload_iq_score");
     });
 });
