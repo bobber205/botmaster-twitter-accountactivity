@@ -1,4 +1,5 @@
- var prompt = require('prompt');
+console.log(`Running Prepare Script for ${process.env.BOT_HANDLE}`);
+var prompt = require('prompt');
 
 const dl_images = require("./download_images_from_s3");
 prompt.start('Press Any Key To Continue');
