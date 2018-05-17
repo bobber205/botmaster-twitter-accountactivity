@@ -12,7 +12,7 @@ var args = _.drop(process.argv, 2);
 
 if (args.length) {
   console.log(`Adding ${args.length} additional handles to the extra lives list`);
-  handles_with_extra_lives = handles_with_extra_lives.concat(args);
+  handles_with_extra_lives = args;
 }
   
 redisClient.on("connect", function(err) {
