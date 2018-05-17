@@ -6,10 +6,13 @@ var config = {
   access_token_key: process.env.CHRP_TWITTER_ACCESS,
   access_token_secret: process.env.CHRP_TWITTER_SECRET
 };
+
+
 console.log(config)
+
+
+
 var client = new Twitter(config);
-
-
     function checkStatus(mediaId) {
       console.log("checkStatus mediaID is", mediaId);
       return makeGet("media/upload", {
@@ -39,6 +42,12 @@ var client = new Twitter(config);
       });
     });
   }
+
+
+imageUploader.onEnvReady().then(() => {
+
+});
+
   console.log(process.argv[2])
   global.media_id = process.argv[2];
 
