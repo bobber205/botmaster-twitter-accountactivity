@@ -7,6 +7,13 @@ const redisClient = redis.createClient(process.env.REDIS_URL);
 var quiz_handle = process.env.BOT_HANDLE;
 
 var handles_with_extra_lives = ["owlsfan954", "chrisbarnett01", "AkhilaMidde", "bobber205", "christeso", "jingwait", "Matty_J2912", "AwesomO17", "lizzypelton", "jsbllt"];
+
+var args = _.drop(process.argv, 2);
+
+if (args.length) {
+  console.log(`Adding ${args.length} additional handles to the extra lives list`);
+  handles_with_extra_lives = handles_with_extra_lives.concat(args);
+}
   
 redisClient.on("connect", function(err) {
   console.log(`Handles with Extra Lives Are!! ${handles_with_extra_lives}`)
