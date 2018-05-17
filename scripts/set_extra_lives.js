@@ -12,7 +12,7 @@ redisClient.on("connect", function(err) {
   console.log(`Handles with Extra Lives Are!! ${handles_with_extra_lives}`)
   _.each(handles_with_extra_lives, (handle) => {
     console.log(`Setting ${handle} to 1`);
-    redisClient.hmset(redisHelpers.getExtraLifeHashKey(quiz_handle), handle, "1", redis.print);
+    redisClient.hmset(redisHelpers.getExtraLifeHashKey(quiz_handle), handle.toLowerCase(), "1", redis.print);
   });
 });
 
