@@ -44,7 +44,7 @@ _.each(args, (folder_name)=> {
             console.log("progress", uploader.progressAmount, uploader.progressTotal);
         });
         uploader.on('end', function () {
-            console.log("done uploading");
+            console.log(`Done Downloading S3 Files`);
             resolve()
         });
     });
