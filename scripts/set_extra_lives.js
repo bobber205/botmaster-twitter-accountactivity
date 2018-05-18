@@ -11,7 +11,7 @@ var handles_with_extra_lives = ["owlsfan954", "chrisbarnett01", "AkhilaMidde", "
 var args = _.drop(process.argv, 2);
 
 if (args.length) {
-  console.log(`Adding ${args.length} additional handles to the extra lives list`);
+  console.log(`Adding ${args.length} additional handles to the extra lives list for ${quiz_handle}`);
   handles_with_extra_lives = args;
 }
   
