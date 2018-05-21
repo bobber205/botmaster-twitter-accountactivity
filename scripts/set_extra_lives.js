@@ -20,6 +20,7 @@ if (args.length) {
 redisClient.on("connect", function(err) {
   console.log(`Handles with Extra Lives Are!! ${handles_with_extra_lives}`)
   _.each(handles_with_extra_lives, (handle) => {
+    handle = handle.toLowerCase();
     console.log(`Setting ${handle} to 1`);
     redisClient.hmset(redisHelpers.getExtraLifeHashKey(quiz_handle.toLowerCase()), handle.toLowerCase(), "1", redis.print);
   });
