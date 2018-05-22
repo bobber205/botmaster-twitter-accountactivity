@@ -17,5 +17,3 @@ redisClient.on("connect", (error) => {
         console.log(result)
     });
 });
-
-// bobber205 matty_j2912 awesomo17 lovely_source ajaysachdev15
