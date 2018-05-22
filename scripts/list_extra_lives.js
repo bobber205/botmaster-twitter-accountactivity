@@ -11,11 +11,11 @@ const redisClient = redis.createClient(process.env.REDIS_URL);
 
 var quiz_handle = process.env.BOT_HANDLE;
 
-console.log(`Handle is ${quiz_handle}`);
-
 redisClient.on("connect", (error) => {
     redisClient.hgetallAsync(redisHelpers.getExtraLifeHashKey(quiz_handle.toLowerCase())).then(result => {
         console.log("Extra Lives Are:")
         console.log(result)
     });
 });
+
+// bobber205 matty_j2912 awesomo17 lovely_source ajaysachdev15
