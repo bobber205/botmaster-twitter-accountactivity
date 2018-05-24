@@ -13,9 +13,9 @@ const redisClient = redis.createClient(process.env.REDIS_URL);
 
 var quiz_handle = process.env.BOT_HANDLE;
 
-var option = _.drop(process.argv, 2);
+var options = _.drop(process.argv, 2);
 
-var do_full = option[0] == 'full' ? true: false
+var do_full = options[0] == 'full' ? true: false
 
 
 redisClient.on("connect", (error) => {
