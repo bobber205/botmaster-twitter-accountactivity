@@ -64,8 +64,7 @@
     "sidekiq": "^1.1.1",
     "thize": "^0.2.2",
     "twit": "^2.2.9",
-    "twitter": "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca",
-    "sleep": "^5.1.1"
+    "twitter": "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca"
   },
   "engines": {
     "node": ">=8.x.x",

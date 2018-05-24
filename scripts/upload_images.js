@@ -2,7 +2,6 @@ const redisHelpers = require("../lib/helpers/redisHelpers");
 const imageUploader = require("../lib/imageUploader");
 const Promise = require("bluebird");
 const join = Promise.join;
-const sleep = require('sleep');
 
 const redis = require("redis");
 const redisClient = redis.createClient(process.env.REDIS_URL);
