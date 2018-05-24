@@ -21,7 +21,7 @@ var do_full = options[0] == 'full' ? true: false
 redisClient.on("connect", (error) => {
     redisClient.hgetallAsync(redisHelpers.getExtraLifeHashKey(quiz_handle.toLowerCase())).then(result => {
         console.log("Extra Lives Are:")
-        result = _.chain(result).map((result, (current, index) => {
+        result = _.chain(result).map((current, index) => {
             if (do_full) return { [current]: index};
             if (current == '1') return {
                 [current]: index
