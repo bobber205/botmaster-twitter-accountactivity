@@ -64,7 +64,8 @@
     "sidekiq": "^1.1.1",
     "thize": "^0.2.2",
     "twit": "^2.2.9",
-    "twitter": "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca"
+    "twitter": "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca",
+    "sleep": "^5.1.1"
   },
   "engines": {
     "node": ">=8.x.x",
@@ -72,7 +73,6 @@
   },
   "devDependencies": {
     "ava": "^0.18.2",
-    "sleep": "^5.1.1",
     "botmaster-test-fixtures": "^2.1.0",
     "coveralls": "^2.11.16",
     "debug": "^2.6.3",
