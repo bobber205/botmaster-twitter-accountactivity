@@ -67,7 +67,7 @@
     "twitter": "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca"
   },
   "engines": {
-    "node": ">=8.x.x",
+    "node": "8.x.x",
     "yarn": "1.6.0"
   },
   "devDependencies": {
