@@ -398,6 +398,10 @@ ava@^0.18.2:
     unique-temp-dir "^1.0.0"
     update-notifier "^1.0.0"
 
+awesome-phonenumber@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.2.6.tgz#843d2b8d27727f50822e893cd40ee54341e3feb2"
+
 aws-sdk@~2.0.31:
   version "2.0.31"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.0.31.tgz#e72cf1fdc69015bd9fd2bdf3d3b88c16507d268e"
