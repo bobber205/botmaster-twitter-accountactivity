@@ -34,7 +34,6 @@ const client = require('twilio')(accountSid, authToken);
 
 client.lookups.phoneNumbers(phone_number_submitted)
     .fetch({
-        type: 'carrier'
     })
     .then(phone_number => console.log(`phone_number.callerName: ${JSON.stringify(phone_number)}`))
     .catch((e) => {console.log(`oops`, e)})
