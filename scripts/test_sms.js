@@ -1,5 +1,6 @@
-const accountSid = 'AC78b6ff62f8dda676ef95d1de9f895c9f';
-const authToken = '699cdfc1592def18ab7d101336c61618';
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_ACCOUNT_AUTH_TOKEN;
+
 const client = require('twilio')(accountSid, authToken);
 
 const sid = `MG5cdf85c3fe7b970ccd276ece9bba9d1f`;
@@ -39,7 +40,7 @@ const numbers = ['1 541-591-9824'];
 numbers.forEach((number) => {
         client.messages
             .create({
-                body: `GAME STARTING SOON CHRIS! the sequel lol`,
+                body: `Hi it’s IQ! We’ll let you know when the game starts. To unsubscribe from reminders just reply with "stop".`,
                 messagingServiceSid: sid,
                 to: number
             })
