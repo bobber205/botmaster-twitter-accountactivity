@@ -17,13 +17,13 @@ const sender_phone_sid = `PN1150a94f14e7074bb3aa2b8fba4728ad`;
 
 
 
-client.messaging.services(sid)
-    .phoneNumbers
-    .create({
-        phoneNumberSid: 'PN09404858448eed8b094b021f150abe56'
-    })
-    .then(phone_number => console.log(phone_number.sid))
-    .done();
+// client.messaging.services(sid)
+//     .phoneNumbers
+//     .create({
+//         phoneNumberSid: 'PN09404858448eed8b094b021f150abe56'
+//     })
+//     .then(phone_number => console.log(phone_number.sid))
+//     .done();
 
 
 // client.messaging.services(sid)
@@ -37,13 +37,13 @@ client.messaging.services(sid)
 // // const numbers = ['+15415919824'];
 // // const numbers = ['+15033296310', '+15415919824'];
 
-// numbers.forEach((number) => {
-//         client.messages
-//             .create({
-//                 body: `Hi it’s IQ! We’ll let you know when the game starts. To unsubscribe from reminders just reply with "stop".`,
-//                 messagingServiceSid: sid,
-//                 to: number
-//             })
-//             .then(message => console.log(message.sid))
-//             .done();
-// })
+numbers.forEach((number) => {
+    client.messages
+        .create({
+            body: ``,
+            messagingServiceSid: sid,
+            to: number
+        })
+        .then(message => console.log(message.sid))
+        .done();
+})
