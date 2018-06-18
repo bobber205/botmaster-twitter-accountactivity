@@ -7,27 +7,47 @@ const sid = `MG5cdf85c3fe7b970ccd276ece9bba9d1f`;
 
 const sender_phone_sid = `PN1150a94f14e7074bb3aa2b8fba4728ad`;
 
+var mysql_helper = require('../lib/helpers/mysql_helper');
+
 const compact = require("lodash").compact;
 const sample = require("lodash").sample;
 const chain = require("lodash").chain;
+const map = require("lodash").map;
 
 const readlines = require("readlines");
 const sms_prompts = compact(readlines.readlinesSync("config/sms_remind_prompts.txt"));
 
 console.log(`Read in ${sms_prompts.length} prompts`);
 
+mysql_helper.getDBConnection().then(function (conn) {
+    var sql_statement = `SELECT distinct(phone_number) from sms_subscribers`;
+    conn.query(sql_statement).then((res) => {
+        var numbers = map(res, 'phone_number');
+        console.log(`Read in ${numbers.length} phone numbers to send out a reminder to.`);
+        var numbers = ['+15033296310', '+15415919824'];
 
-// const numbers = ['+15033296310', '+15415919824'];
-
-const numbers = ['+15033296310', '+15415919824', '+15416367552', '+15038904139', '+18638995697', '+14257707852', '+17044730440', '+14253275541', '+14164711659', '+15084145369', '+14103225254', '+16502388277', '+16302721945', '+19127553543', '+15413316090', '+15039759610', '+15189288101', '+14104635441', '+18186672247', '+18082981108', '+17135170357', '+16466272115', '+15182904874', '+19732021804', '+18042453117', '+18155452302', '+18175253524', '+19186140553', '+14133516849', '+19125990320', '+17066006766', '+18034625489', '+13062910438', '+15415917405', '+971503866979', '+12246221522', '+19846644420', '+447375499325', '+12542652432', '+12052603214', '+12052425376', '+19379719815', '+12175978691', '+15035555656', '+12104103561', '+12063353856', '+18645569757', '+15702099249', '+393481050443', '+15408183714', '+6591862972', '+19712826898', '+353871824180', '+18135037158', '+918327762100', '+18433439157', '+27737922648', '+15702161444', '+13473849138', '+18603671795', '+14402266290', '+12254619300', '+13477079228', '+14782830529', '+18326517137', '+13152893702', '+13375739310', '+919805167109', '+14849196136', '+447510496242', '+18134955858', '+17135040095', '+15054853523', '+19728325468', '+15877001901', '+16127479313', '+13026701988', '+17044915753', '+13479712935', '+16232499842', '+19048815945', '+12403576470', '+16019274824', '+17169860993', '+447947725676', '+16136140177', '+17249689271', '+19145221478', '+393483802385'];
-
-numbers.forEach((number) => {
-    client.messages
-        .create({
-            body: sample(sms_prompts),
-            messagingServiceSid: sid,
-            to: number
+        numbers.forEach((number) => {
+            client.messages
+                .create({
+                    body: sample(sms_prompts),
+                    messagingServiceSid: sid,
+                    to: number
+                })
+                .then(message => console.log(`Sent Message to ${number}`))
+                .done();
         })
-        .then(message => console.log(message.sid))
-        .done();
-})
+    });
+
+});
+
+// var numbers = ['+15033296310', '+15415919824'];
+// numbers.forEach((number) => {
+//     client.messages
+//         .create({
+//             body: sample(sms_prompts),
+//             messagingServiceSid: sid,
+//             to: number
+//         })
+//         .then(message => console.log(message.sid))
+//         .done();
+// })

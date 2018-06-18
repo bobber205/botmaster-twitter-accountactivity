@@ -59,6 +59,7 @@
     "moment": "^2.21.0",
     "path": "^0.12.7",
     "phone": "^2.0.0",
+    "promise-mysql": "^3.2.1",
     "prompt": "^1.0.0",
     "randomstring": "^1.1.5",
     "readlines": "^0.2.0",
@@ -74,7 +75,7 @@
   },
   "engines": {
     "node": ">=10.2.x",
-    "yarn": "1.6.0"
+    "yarn": "1.7.0"
   },
   "devDependencies": {
     "ava": "^0.18.2",
