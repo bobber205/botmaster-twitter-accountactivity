@@ -15,7 +15,7 @@ var quiz_handle = process.env.BOT_HANDLE;
 
 var options = _.drop(process.argv, 2);
 
-var do_full = options[0] == 'full' ? true: false
+var do_full = options[0] == 'full' ? true: false;
 
 
 redisClient.on("connect", (error) => {
