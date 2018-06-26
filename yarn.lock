@@ -3001,8 +3001,8 @@ google-drive@^0.0.8:
     request "^2.72.0"
 
 google-libphonenumber@^3.1.6:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/google-libphonenumber/-/google-libphonenumber-3.1.7.tgz#5061191c4c7e576f6bcf9d3179d2fcee6445a50c"
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/google-libphonenumber/-/google-libphonenumber-3.1.8.tgz#076ecc21e2113371b9d67f6b7dd9ac66db9722cc"
 
 google-p12-pem@^1.0.0:
   version "1.0.2"
@@ -6429,8 +6429,8 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 twilio@^3.17.1:
-  version "3.17.3"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.17.3.tgz#5bb4f8bc0ac1e81949c9956e3c29d91fcbc13a24"
+  version "3.17.4"
+  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.17.4.tgz#9166cb0213b235356edfce232b5e6bd8e41276c4"
   dependencies:
     deprecate "1.0.0"
     jsonwebtoken "^8.1.0"
@@ -6691,9 +6691,13 @@ uuid@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
-uuid@^3.0.0, uuid@^3.1.0, uuid@^3.2.1:
+uuid@^3.0.0, uuid@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
+
+uuid@^3.1.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.0.tgz#b237147804881d7b86f40a7ff8f590f15c37de32"
 
 vali-date@^1.0.0:
   version "1.0.0"
