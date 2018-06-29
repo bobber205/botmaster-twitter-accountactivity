@@ -11,9 +11,9 @@ const bot_config = { useDefaultMountPathPrepend: false };
 
 const botmaster = new Botmaster(bot_config);
 
-console.log("Bot Config", bot_config);
+console.log(`Bot Config`, bot_config);
 
-const twitterSettings = settings = {
+const twitterSettings  = {
   credentials: {
     consumerKey: process.env.CHRP_TWITTER_CONSUMER_KEY,
     consumerSecret: process.env.CHRP_TWITTER_CONSUMER_SECRET,
