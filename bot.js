@@ -30,8 +30,6 @@ const app = express();
 
 const startServer = async() => {
   let port = process.env.PORT || 3005;
-  // app.get("*", (req, res) => res.send("Hello World!"));
-  console.log("Listening on ",  port);
   app.listen( port, () =>
     console.log(`Express is listening on ${port}`)
   );
@@ -40,15 +38,3 @@ const startServer = async() => {
 startServer();
 
 const twitterBot = new TwitterAccountActivityBot(twitterSettings, app);
-
-// botmaster.addBot(twitterBot);
-
-// botmaster.use({
-//   type: "incoming",
-//   name: "my-middleware",
-//   controller: (bot, update) => {
-//     // console.log('Message Received ==>');
-//     // message = 'hi there!';
-//     // return bot.sendDM(update, message);
-//   }
-// });
