@@ -29,7 +29,7 @@ redisClient.on("connect", (error) => {
             };
             return null;
         }).compact().value();
-        console.log(JSON.stringify(myObject, null, 4));
+        console.log(JSON.stringify(result, null, 4));
         console.log(`There are ${result.length} total extra lives set`);
     });
 });
