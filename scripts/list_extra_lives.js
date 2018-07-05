@@ -25,7 +25,7 @@ redisClient.on("connect", (error) => {
         result = _.chain(result).map((current, index) => {
             if (do_full) return { [current]: index};
             if (current == '1') return {
-                [current]: index
+                [index]: current
             };
             return null;
         }).compact().value();
