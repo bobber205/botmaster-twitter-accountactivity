@@ -23,7 +23,7 @@ redisClient.on("connect", (error) => {
     redisClient.hgetallAsync(redisHelpers.getExtraLifeHashKey(quiz_handle.toLowerCase())).then(result => {
         console.log("Extra Lives Are:")
         result = _.chain(result).map((current, index) => {
-            if (do_full) return { [current]: index};
+            if (do_full) return { [index]: current};
             if (current == '1') return {
                 [index]: current
             };
