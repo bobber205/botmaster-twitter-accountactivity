@@ -3,6 +3,7 @@
 const redisHelpers = require("../lib/helpers/redisHelpers");
 const redis = require("redis");
 const _ = require('lodash');
+const util = require('util');
 
 const bluebird = require('bluebird');
 bluebird.promisifyAll(redis.RedisClient.prototype);
