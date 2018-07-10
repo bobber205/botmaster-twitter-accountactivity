@@ -3,6 +3,7 @@
 const redisHelpers = require("../lib/helpers/redisHelpers");
 const redis = require("redis");
 const _ = require('lodash');
+const util = require('util');
 
 const bluebird = require('bluebird');
 bluebird.promisifyAll(redis.RedisClient.prototype);
@@ -22,13 +23,13 @@ redisClient.on("connect", (error) => {
     redisClient.hgetallAsync(redisHelpers.getExtraLifeHashKey(quiz_handle.toLowerCase())).then(result => {
         console.log("Extra Lives Are:")
         result = _.chain(result).map((current, index) => {
-            if (do_full) return { [current]: index};
+            if (do_full) return { [index]: current};
             if (current == '1') return {
-                [current]: index
+                [index]: current
             };
             return null;
         }).compact().value();
-        console.log(result);
+        console.log(JSON.stringify(result, null, 4));
         console.log(`There are ${result.length} total extra lives set`);
     });
 });
