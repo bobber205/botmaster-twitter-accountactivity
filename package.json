@@ -78,7 +78,7 @@
   },
   "engines": {
     "node": ">=10.2.x",
-    "yarn": "1.9.2"
+    "yarn": ">=1.9.x"
   },
   "devDependencies": {
     "ava": "^0.18.2",
