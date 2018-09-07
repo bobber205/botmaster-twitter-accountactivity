@@ -28,10 +28,11 @@
 
             return os;
         }
+        //https://twitter.com/messages/compose?recipient_id=136023366&welcome_message_id=1030533726747455492
         if (getOS() == "iOS") {
-            window.location = "twitter:///user?screen_name=iqtrivia";
+            window.location = "twitter:///user?screen_name=iqtrivia&recipient_id=136023366&welcome_message_id=1030533726747455492";
         } else if (getOS() == "Android") {
-            window.location = "twitter://user?screen_name=iqtrivia";
+            window.location = "twitter://user?screen_name=iqtrivia&recipient_id=136023366&welcome_message_id=1030533726747455492";
         } else {
             window.location = "https://twitter.com/IQtrivia";
         }
