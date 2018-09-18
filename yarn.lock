@@ -3080,8 +3080,8 @@ google-drive@^0.0.8:
     request "^2.72.0"
 
 google-libphonenumber@^3.1.6:
-  version "3.1.12"
-  resolved "https://registry.yarnpkg.com/google-libphonenumber/-/google-libphonenumber-3.1.12.tgz#2f42df8bc4d6a6b6a10929840563fce27112f7f8"
+  version "3.1.13"
+  resolved "https://registry.yarnpkg.com/google-libphonenumber/-/google-libphonenumber-3.1.13.tgz#bfa20a15619a2bac1cb4f02de506ee8242df7f02"
 
 google-p12-pem@^1.0.0:
   version "1.0.2"
