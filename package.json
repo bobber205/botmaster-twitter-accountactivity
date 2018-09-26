@@ -52,6 +52,7 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.17.1",
     "botmaster": "^3.0.7",
+    "countdown": "^2.6.0",
     "express": "^4.15.2",
     "express-html": "^1.0.1",
     "google-drive": "^0.0.8",

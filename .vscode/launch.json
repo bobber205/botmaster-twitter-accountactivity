@@ -10,6 +10,13 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/bot.js"
+        },
+        {
+            "type": "node",
+            "envFile": "${workspaceFolder}/chirpify_node_recruit.sh",
+            "request": "launch",
+            "name": "The Great Recruiter",
+            "program": "${workspaceFolder}/scripts/recruitment.js"
         }
     ]
 }
