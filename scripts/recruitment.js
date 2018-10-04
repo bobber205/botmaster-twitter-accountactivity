@@ -22,12 +22,12 @@ const bluebird = require('bluebird');
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 
-var con = mysql.createConnection({
-    host: ""
-    user: ""
-    password: ""
-    database: ""
-});
+// var con = mysql.createConnection({
+//     host: ""
+//     user: ""
+//     password: ""
+//     database: ""
+// });
 
 //console.log(twitter_text_file_users.length+" on the do not message list");
 
