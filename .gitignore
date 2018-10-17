@@ -74,3 +74,6 @@ credentials.json
 client_id.json
 client_secret.json
 chirpify_node_recruit.sh
+users.txt
+.vscode/settings.json
+scripts/paypal/test_payment.js
