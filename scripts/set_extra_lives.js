@@ -25,6 +25,3 @@ redisClient.on("connect", function(err) {
     redisClient.hmset(redisHelpers.getExtraLifeHashKey(quiz_handle.toLowerCase()), handle.toLowerCase(), "1", redis.print);
   });
 });
-
-
-
