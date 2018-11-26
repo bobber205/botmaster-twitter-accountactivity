@@ -81,6 +81,9 @@
     "node": ">=10.2.x",
     "yarn": "1.12.3"
   },
+  "resolutions": {
+    "**/event-stream": "3.3.4"
+  },
   "devDependencies": {
     "ava": "^0.18.2",
     "botmaster-test-fixtures": "^2.1.0",
