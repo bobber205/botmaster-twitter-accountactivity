@@ -25,7 +25,7 @@ var params = {
         Bucket: "iqtrivia",
         Key: "environment/accounts.json",
     },
-}
+};
 
 var my_promise = new Promise((resolve, reject) => {
         var uploader = client.downloadFile(params);
@@ -44,7 +44,7 @@ var my_promise = new Promise((resolve, reject) => {
 async function downloadFile() {
     console.log("Downloading Environment File...");
     await my_promise;
-    console.log("Done!")
+    console.log("Done!");
 }
 
 downloadFile();
