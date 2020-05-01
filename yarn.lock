@@ -458,9 +458,9 @@ ava@^0.18.2:
     update-notifier "^1.0.0"
 
 awesome-phonenumber@^2.30.0:
-  version "2.30.0"
-  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.30.0.tgz#2ee75eb541c47038e8073de03791aef94373d30c"
-  integrity sha512-SwYTHSCLwd9K6wGe9S3mLnfbnEXK3MQL18JBXgiDDUAFMR4QFH0Vit1jpQ+j3Vfoxp7UqneqawezWL+tGEbcFg==
+  version "2.31.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.31.0.tgz#1a1ead04344bbf8a267c1b559331d996550796cb"
+  integrity sha512-d093t+pIzztgjeVZg4ckzR5Ok+Qw6TSrjNM01JKeJxPtGxN+BYM+qhiZNCpdyFF8wyXz97B9wef/rar1udYDMQ==
 
 aws-sdk@~2.0.31:
   version "2.0.31"
@@ -5083,9 +5083,9 @@ module-deps-sortable@4.0.6:
     xtend "^4.0.0"
 
 moment@^2.21.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+  version "2.25.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.25.0.tgz#e961ab9a5848a1cf2c52b1af4e6c82a8401e7fe9"
+  integrity sha512-vbrf6kJGpevOxmDRvCCvGuCSXvRj93264WcFzjm3Z3pV4lfjrXll8rvSP+EbmCte64udj1LkJMILxQnjXAQBzg==
 
 ms@2.0.0:
   version "2.0.0"
