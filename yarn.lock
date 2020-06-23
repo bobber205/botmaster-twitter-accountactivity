@@ -496,9 +496,9 @@ ava@^0.18.2:
     update-notifier "^1.0.0"
 
 awesome-phonenumber@^2.30.0:
-  version "2.34.0"
-  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.34.0.tgz#c5170e40173b6c506d28a3ca79d3439ca71671c6"
-  integrity sha512-P2ckagK5jen79wOqT+vEngJ1Zx5PCRaaBtu2CiCOBjaVjIDm27hewDiAMqxEwZ3fhtzq6l0WDtIiK56lTvC5dA==
+  version "2.35.0"
+  resolved "https://registry.yarnpkg.com/awesome-phonenumber/-/awesome-phonenumber-2.35.0.tgz#4c8fe5ec74bde86c86f7535fe74b588ce98b9327"
+  integrity sha512-d9PgzixrJqYnk5GHOL+7yKVcgpDAxHCmaiMS4NkuPhCC37I9rDFYbMM9cHftDmCiZ85q24FmXOC1/O6mnD+RbQ==
 
 aws-sdk@~2.0.31:
   version "2.0.31"
