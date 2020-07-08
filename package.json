@@ -73,7 +73,11 @@
     "thize": "^0.2.2",
     "twit": "^2.2.9",
     "twitter": "https://github.com/teifip/node-twitter#68793869f0f6b8ec8b7d2a116131c5c009395dca",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "cryptiles": "^4.1.2",
+    "tunnel-agent": "^0.6.0",
+    "mime": "^1.4.1",
+    "hoek": "^4.2.1"
   },
   "engines": {
     "node": "10.x",
